@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link href="./fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet"> <!--load all styles -->
+</head>
+<style>
+    @font-face {
+        font-family: hiragino;
+        src: url(./ヒラギノ角ゴ\ Pro\ W3.otf);
+    }
+    body {
+        font-family: hiragino;
+    }
+    .container {
+        padding: 0 10px;
+        width: 100%;
+    }
+    header {
+        background-color:#001489;
+         height: 45px;
+    }
+    p  {
+        font-size: 14px;
+    }
+    h4 {
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 47px;
+    }
+    h3 {
+        height: 33px;
+        line-height: 33px;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 60px 0 60px 0;
+        padding-left: 16px;
+        border-left: 5px solid #001489;
+    }
+    .row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo-wrap {    
+        height: 45px;
+        width: 45px;
+        padding: 10px 0;
+        background-color: #001489;
+     }
+    .logo-wrap img {
+         height: 100%;
+         width: 100%;
+         object-fit: contain;
+    }
+    header ul {
+        height: 100%;
+        float: right;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    header ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        margin-right: 20px;
+    }
+    .nav-social-links {
+        display: none;
+    }
+    .nav-social-links img {
+        margin: 0 7px;
+    }
+    .hero-img {
+        display: block;
+        width: 100%;
+    }
+    .hero-lg-img {
+        display: none;
+        width: 100%;
+    }
+    .main-menu {
+        width: 100%;
+        padding-top: 40px;
+        background-color: #f4f4f4;
+    }
+    .item {
+        width: 50%;
+        margin-bottom: 23px;
+        padding: 0 10px;
+    }
+    .item img {
+        width: 100%;
+        object-fit: contain;
+    }
+    .side-menu-lg {
+        background-color: #ececec;
+        width: 50%;
+        height: 1142px;
+        padding: 0 0 20px 64px;
+        font-size: 14px;
+        display: none;
+    }
+    h5 {
+        font-weight: 900;
+        margin: 50px 0 30px 0;
+    }
+    .side-menu-lg ul {
+         margin-bottom: 50px;
+    }
+    .side-menu-lg ul li {
+        margin-top: 10px;
+    }
+    .side-menu-lg ul li::before {
+        content:"- ";
+        color: #999;
+    }
+    .sml-col {
+        width: 170px;
+        margin-right: 10px;
+    }
+    .side-menu-option {
+        color: #fff;
+        background-color: #4b4b4b;
+        height: 47px;
+        border:1px solid #fff;           
+    }
+    .side-menu-option span {
+        background-color: #4b4b4b;
+        font-weight: 900;
+        border-radius: 50%;
+        padding: 2px 5px 3px 5px;
+        border: 1px solid #fff;
+        cursor: pointer;    
+    }
+    .service-imformation .item {
+        width: 100%;
+        margin-bottom: 37px;
+        padding: 0;
+    }
+    .gojuon {
+        height: 47px;
+        background-color: #ececec;
+        text-align: center;
+        line-height: 47px;
+    }
+    .group-client {
+        border: 4px solid #ececec;
+        text-align: center;
+        padding: 0 10px 0 10px;
+    }
+    .group-client-item {
+        border-bottom: 1px solid #ececec;
+        margin-top: 20px;
+        padding: 0 20px 0 20px;
+    }
+    .group-client img {
+        height: 26px;
+        margin-top: 12px;
+        margin-bottom: 15px;
+    }
+    .news-release {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-bottom: 20px;
+    }
+    .article-date {
+        margin-bottom: 20px;
+        height: 17px;
+        line-height: 17px;
+    }
+    .article-list img {
+        height: 17px;
+        margin: 0 35px 0 10px;
+    }
+    .article-list {
+        border-top: 1px solid #ececec;
+        padding: 15px 0 20px 0;
+    }
+    .social-link {
+        background-color: #ececec;
+        height: 130px;
+        margin: 0 10px 52px 10px;
+    }
+    .social-link-wrap {
+        width: 45%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    footer {
+        text-align: center;
+        font-size: 14px;
+    }
+    .to-page-top {
+        background-color: #4b4b4b;
+        height: 35px;
+        padding-top: 6px;
+    }
+    .footer-links {
+        background-color: #363636;
+        color: #fff;
+    }
+    .footer-links ul li {
+        height: 40px;
+        border: 1px solid #4b4b4b;
+        line-height: 40px;
+        width: 50%;
+        overflow: hidden;
+    }
+    .input {
+        width: 90%;
+        height: 80px;
+        background-color: #363636;
+        margin: 0 auto;
+        line-height: 80px;
+        text-align: start;
+    }
+    input {
+        height: 35px;
+        width: calc(100% - 100px);
+    }
+    i {
+        border-radius: 0 3px 3px 0;
+        background-color: #222;
+        padding: 14px;
+    }
+    .resource {
+        background-color: #222;
+        padding: 15px 0 25px 0 ;
+        color: #999;
+    }
+    .resource ul li {
+        display: inline-block;
+        margin: 8px 12px;
+    }
+    .copyrights {
+        margin-top: 25px;
+    }
+    .fb-items {
+        width: 100%;
+        padding: 18px;
+        border-radius: 2px;
+        border: 1px solid #ececec;
+    }
+    h6 {
+        word-break: normal;
+        word-wrap: break-word;
+    }
+    .img-wrap {
+        width: 100%;
+        margin: 18px 0;
+    }
+    .img-wrap img {
+        width: 100%;
+        object-fit: contain;
+    }
+    .fb-page {
+        width: 223px;
+        height: 46px;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 1px;
+        line-height: 46px;
+    }
+    .fb-title {
+        display: flex;
+        margin-bottom: 18px;
+    }
+    .fb {
+        height: 380px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        overflow: auto;
+    }
+    @media screen and (min-width:1200px) {
+        .hero-img {
+            display: none;
+            }
+            .hero-lg-img {
+                display: block;
+            }
+            .side-menu-lg {
+                display: flex;
+            }
+            .main-menu {
+                width: 50%;
+                padding-left: 35px;
+                height: 1142px;
+            }
+            .main-menu .row {
+                justify-content: flex-start;
+            }
+            .main-menu .item {
+                width: 240px;
+            }
+            .side-menu {
+                display: none;
+            }
+            .service-imformation .item {
+                width: 460px;
+                padding: 0 10px;
+            }
+            .group-client {
+                display: flex;
+                padding: 0;
+            }
+            .group-client-item {
+                border-right: 1px solid #ececec;
+                border-bottom: 0;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .news-release {
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+            .service-imformation .row  {
+                justify-content: center;
+            }
+            .container {
+                padding: 0 35px;
+            }
+            .article-list {
+                display: flex;
+                padding-top: 32px;
+            }
+            .other-links .item {
+                width: 25%;
+            }
+            .links {
+                justify-content: flex-start;
+            }
+            .other-links {
+                padding: 0 35px;
+            }
+            .social-link {
+                display: none;
+            }
+            .to-page-top {
+                display: none;
+            }
+            .footer-links ul {
+            width: 75%;
+            }
+            .footer-links ul li {
+                height: 45px;
+                width: initial;
+                border: 0;
+            }
+            .input {
+                width: 25%;
+                text-align: end;
+            }
+            .footer-links {
+                padding: 15px 35px;
+            }
+            .resource {
+                display: flex;
+                padding-top: 35px;
+                padding-bottom: 35px;
+            }
+            .copyrights {
+                margin: auto 0;
+                margin-left: auto;
+            }
+            .logo-wrap {
+                height: 98px;
+                width: 98px;
+                padding: 0 5px;
+            }
+            header {
+                background-color: initial;
+                height: initial;
+            }
+            .nav-social-links {
+            display: block;
+            }
+            nav {
+                position: absolute;           
+            }
+            header .row {
+                align-items: flex-start;
+            }
+            nav ul {
+                margin-top: 7px;
+            }
+            .fb {
+                flex-direction: row;
+                height: initial;
+                overflow: initial;
+                align-items: flex-start;
+            }
+            .fb-items {
+                width: 283px;
+            }
+    }
+
+
+    
+</style>
+<body>
+    <header>
+        <nav class="container row">
+            <div class="logo-wrap">
+                <img src="./images/logo.png" alt="">
+            </div>
+            <ul>
+                <li><a href="">オンラインショップ</a></li>
+                <li><a href="">取扱店検索</a></li>
+                <li><a href="">CLUB MIZUNO</a></li>
+                <li class="nav-social-links">
+                    <img src="./images/top_icon_fb_pc.png" alt="">
+                    <img src="./images/top_icon_tw_pc.png" alt="">
+                    <img src="./images/top_icon_yt_pc.png" alt="">
+                    <img src="./images/top_icon_ig_pc.png" alt="">
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="herosection">
+        <img class="hero-img" src="./images/mainvisual_202104_sp.jpg" alt="">
+        <img  class="hero-lg-img" src="./images/mainvisual_202104.jpg" alt="">
+    </section>
+    <section class="menu row">        
+        <div class=" main-menu">
+            <div class="row">
+                <div class="item">
+                    <h4>野球</h4>
+                    <img src="./images/btn_category05_5.jpg" alt="">
+                </div>
+                <div class="item">
+                     <h4>ランニング</h4>
+                    <img src="./images/btn_category02b.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="item">
+                    <h4>ゴルフ</h4>
+                    <img src="./images/btn_category03_new.jpg" alt="">
+                </div>
+                    <div class="item">
+                    <h4>トレーニング</h4>
+                    <img src="./images/pickup_30.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+               <h4 style="padding-left: 10px">Pick up!</h4>
+            </div>
+            <div class="row">
+                <div class="item">
+                    <h4>ミズノマウスカバー</h4>
+                    <img src="./images/mouthcover_mizunojp.jpg" alt="">
+                </div>
+                <div class="item">
+                    <h4>yabme</h4>
+                    <img src="./images/yabme_mizunojp.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="item">
+                    <h4>MIZUNO Custom Studio</h4>
+                    <img src="./images/pickup_31.jpg" alt="">
+                </div>
+                <div class="item">
+                    <h4>企業関係者の方へ</h4>
+                    <img src="./images/banner_btob.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="item">
+                <h4>ミズノあそびのレシピ</h4>
+                    <img src="./images/pickup_35.jpg" alt="">
+                </div>
+                <div class="item">
+                    <h4>こういう時にできること</h4>
+                    <img src="./images/pickup_36.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="item">
+                    <h4>ことぷろ</h4>
+                    <img src="./images/kotopro.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="side-menu-lg">
+            <div class="sml-col">
+                <h5>競技</h5>
+                <ul>
+                    <li>空手道</li>
+                    <li>競泳</li>
+                    <li>ゴルフ</li>
+                    <li>柔道</li>
+                    <li>スキー</li>
+                    <li>ソフトテニス</li>
+                    <li>ソフトボール</li>
+                    <li>卓球</li>
+                    <li>ダンス</li>
+                    <li>テニス</li>
+                    <li>ドッジボール</li>
+                    <li>パークゴルフ／グラウンド・ゴルフ</li>
+                    <li>バスケットボール</li>
+                    <li>バドミントン</li>
+                    <li>バレーボール</li>
+                    <li>ハンドボール</li>
+                    <li>フットサル</li>
+                    <li>フットボール</li>
+                    <li>ボクシング</li>
+                    <li>野球</li>
+                    <li>ラグビー</li>
+                    <li>陸上競技</li>
+                </ul>
+            </div>
+            <div class="sml-col">
+                <h5>ライフスタイル</h5>
+                <ul>
+                    <li>
+                        アウトドア</li>
+                    <li>ウォーキング</li>
+                    <li>キッズ</li>
+                    <li>ジュニア</li>
+                    <li>Go to by mizuno</li>
+                    <li>アクアフィットネス</li>
+                    <li>フィットネス</li>
+                    <li>myながら運動</li>
+                    <li>MIZUNO SPORTS STYLE
+                        （スニーカー）</li>
+                    <li>MIZUNO SPORTS STYLE
+                        （アパレル）</li>
+                    <li>ミズノマウスカバー</li>
+                    <li>メディカル</li>
+                    <li>ランニング</li>
+                    <li>ワーキング</li>
+                </ul>
+                <h5>オールスポーツ</h5>
+                <ul>
+                    <li>アイスタッチ
+                        （アンダーウエア）</li>
+                    <li>ドライベクター
+                        （アンダーウエア）</li>
+                    <li>バイオギア
+                        （機能性アンダー）</li>
+                    <li>ハイドロ銀チタン®</li>
+                    <li>ブレスサーモ
+                        （アンダーウエア）</li>
+                </ul>
+            </div>
+            <div class="sml-col">
+                <h5>トレーニング</h5>
+                <ul>
+                    <li>サプリメント</li>
+                    <li>トレーニングアパレル</li>
+                    <li>トレーニンググッズ</li>
+                </ul>
+                <h5>テクノロジー</h5>
+                <ul>
+                    <li>スプリットストラップ</li>
+                    <li>ソーラーカット</li>
+                    <li>テックシールド</li>
+                    <li>テックフィル</li>
+                    <li>ドライエアロフロー</li>
+                    <li>ハイドロ銀チタン</li>
+                    <li>ブレスサーモ</li>
+                    <li>MIZUNO ENERZY</li>
+                </ul>
+                <h5>オリジナルオーダー</h5>
+                <ul>
+                    <li>ゴルフクラブ</li>
+                    <li>野球</li>
+                    <li>陸上シューズ</li>
+                    <li>バレーシューズ</li>
+                    <li>ワーキング</li>
+                    <li>ミズノカスタムスタジオ
+                        （チームアパレル）</li>
+                </ul>
+                <h5>サービス</h5>
+                <ul>
+                    <li>あそりーと
+                        （スポーツ学童保育）</li>
+                    <li>健康プログラム
+                        （企業・自治体様向け）</li>
+                    <li>ことぷろ
+                        (コト関連イベント・プログラム)</li>
+                    <li>スポーツ保険</li>
+                    <li>（スポーツ動画アプリ）</li>
+                </ul>
+                <p style="margin-top: 50px">(50音順)</p>
+            </div>
+        </div>
+    </section>
+    <section class="side-menu">
+        <div class="side-menu-option row container"><h4>競技</h4><span>+</span></div>
+        <div class="side-menu-option row container"><h4>ライフスタイル</h4><span>+</span></div>
+        <div class="side-menu-option row container"><h4>オールスポーツ</h4><span>+</span></div>
+        <div class="side-menu-option row container"><h4>トレーニング</h4><span>+</span></div>
+        <div class="side-menu-option row container"><h4>テクノロジー</h4><span>+</span></div>
+        <div class="side-menu-option row container"><h4>オリジナルオーダー</h4><span>+</span></div>
+        <div class="side-menu-option row container"><h4>サービス</h4><span>+</span></div>
+        <div class="gojuon">(50音順)</div>
+    </section>
+    <section class="service-imformation container">
+        <h3>ショップ</h3>
+        <div class="row">
+            <div class="item">
+                <img src="./images/bnr-online.png" alt="">
+            </div>
+            <div class="item">
+                <img src="./images/bnr-shop.png" alt="">
+            </div>
+        </div>
+        <h3>スポーツ施設サービス</h3>
+        <div class="row">
+            <div class="item">
+                <img src="./images/bnr-service.png" alt="">
+            </div>
+            <div class="item">
+                <img src="./images/bnr-shisetsu.png" alt="">
+            </div>
+        </div>
+        <h3>法人・団体のお客様</h3>
+        <div class="group-client">
+            <div class="group-client-item">
+                <h4>企業関係者の方へ</h4>
+                <p>制服・イベントのご提案から、健康経営・企業内施設設備のご相談まで幅広く取り組んでいます。</p>
+                <img src="./images/top_icon_arrow.gif" alt="">
+            </div>
+            <div class="group-client-item">
+                <h4>学校関係者の方へ</h4>
+                <p>体育授業用 体操服・体育館シューズなどをお取り扱いしています。</p>
+                <img src="./images/top_icon_arrow.gif" alt="">
+            </div>
+            <div class="group-client-item">
+                <h4>教育・行政関係者の方へ</h4>
+                <p>スポーツ施設の設計・施工から管理運営 サービスまで総合的に 取り組んでいます。</p>
+                <img src="./images/top_icon_arrow.gif" alt="">
+            </div>
+        </div>
+        <h3>キャンペーン＆イベント</h3>
+        <div class="item" style="width: 50%">
+            <img src="./images/bnr_cam_183.jpg" alt="">
+            <h5>【卓球】＼月曜ラジオ／あい＆れいこの ぴんぽんと～く！</h5>
+            <p>ミズノアドバイザリースタッフの藤沼亜衣氏と樋浦令子氏をパーソナリティーに起用したYouTubeラジオ番組。
+                初回は11月2日20:00配信スタートです。</p>
+        </div>
+        <h3>新着情報</h3>
+        <div class="news-release">
+            <p>ニュースリリース</p>
+            <p><img style="height: 16px" src="./images/top_icon_news.gif" alt="">ミズノ製品に関する重要なお知らせ</p>
+        </div>
+        <div class="article-list">
+            <div class="article-date">
+                <p>2021.04.27<img src="./images/cate_news.jpg" alt=""></p>
+            </div>
+            <p>スポーツ機能をビジネス用バックパックに搭載</br>
+                青山商事とミズノの共同企画バッグを「洋服の青山」で４月２８日発売</p>
+        </div>
+        <div class="article-list">
+            <div class="article-date">
+                <p>2021.04.20<img src="./images/cate_news.jpg" alt=""></p>
+            </div>
+            <p>スポーツ素材を使用した快適な着け心地</br>
+                「ミズノマウスカバー」レース柄と千鳥柄を限定発売</p>
+        </div>
+        <div class="article-list">
+            <div class="article-date">
+                <p>2021.04.19<img src="./images/cate_news.jpg" alt=""></p>
+            </div>
+            <p>火の鳥 NIPPON の挑戦を支える</br>
+                『ダイバーシティーコンセプト』を採用した バレーボール女子日本代表チーム新ユニフォーム</p>
+        </div>
+        <div class="article-list" style="border-bottom:1px solid #ececec">
+            <div class="article-date">
+                <p>2021.04.12<img src="./images/cate_news.jpg" alt=""></p>
+            </div>
+            <p>競泳 佐藤翔馬選手　武良竜也選手</br>
+                ミズノブランドアンバサダー契約締結</p>
+        </div>
+        <h3>Facebookページの新着情報</h3>
+        <div class="fb">
+            <div class="fb-items">
+                <div class="fb-title">
+                    <div class="fb-logo">
+                        <img src="./images/1503.png" alt="">
+                    </div>
+                    <h6 style="margin-left: 5px">Mizuno Swim Jp　ミズノスイム</h6>
+                </div>
+                <h6>#日本選手権 にて、多くのミズノアンバサダーが着用した、#GX・SONICNEO #AURORA BLUE　本日5月20日ついに発売開始！😆</br>#フラット姿勢 に必要なパワーを保ちながら着心地の良さを実現したモデルです😉</br></br>#ミズノ　#ミズノスイム</br>#池江璃花子　#大橋悠依</br></br>https://www.mizunoshop.net/disp/CSfDispListPage_001.jsp?q=GX%E3%80%80SONIC%E3%80%80NEO&x=0&y=0&dispNo[]=&ts=custom&searchbox=1sort=Score%2CNumber11k_uid=ugEIWbl01pqMgFzlhLGLCPvJMwr0Ea&mizunoMemRank=01&view=ajax&r1c=onSale&s11o=1&s12o=1&s13o=1&s14o=1&s15o=1&s16o=1&s17o=1
+                </h6>
+                <div class="img-wrap">
+                    <img src="./images/18647.jpg" alt="">
+                </div>
+                <div class="fb-page">Facebookページへ > </div>
+            </div>
+            <div class="fb-items">
+                <div class="fb-title">
+                    <div class="fb-logo">
+                        <img src="./images/1503.png" alt="">
+                    </div>
+                    <h6 style="margin-left: 5px">Mizuno Table Tennis Jp ミズノ卓球</h6>
+                </div>
+                <h6>ジメジメジメジメ…☔</br>こんな時期は圧倒的な通気性(※)のドライエアロフロー採用ウエアがおすすめ！</br>汗の膜ができにくいため、通気性を保ちます☝</br></br>⇓トップ選手も着用！ドライエアロフローとは？</br> https://www.mizuno.jp/technology/dry_aeroflow/</br></br>(※当社従来品比較)</br>#DRYAEROFLOW #ミズノ卓球 #ミズノ #ゲームシャツ
+                 </h6>
+                <div class="img-wrap">
+                    <img src="./images/18646.jpg" alt="">
+                </div>
+                <div class="fb-page">Facebookページへ > </div>
+            </div>
+            <div class="fb-items">
+                <div class="fb-title">
+                    <div class="fb-logo">
+                        <img src="./images/1503.png" alt="">
+                    </div>
+                    <h6 style="margin-left: 5px">MIZUNO BASEBALL JP
+
+                    </h6>
+                </div>
+                <h6>軽いスパイクを求めるキミに！<br>軽量維新シリーズ⚾️<br><br>ライトレボエリートプラス<br>スパイク"ライトレボ"シリーズで最も多機能なスパイクだから、多機能性を「プラス」✨<br><br>何がプラスなの？<br><br>①足の負担軽減<br>足とアウトソールの間にミッドソールを配置<br><br>②P革不要のつま先補強<br>従来比約6.6倍！！✨<br>つま先が補強されることにより耐久性もUP！<br><br>これだけの特長を持っても、質量約260g…軽い…！😳😳<br>#ライトレボエリート #野球スパイク #スパイクを忘れろ
+                    </h6>
+                <div class="img-wrap">
+                    <img src="./images/18645.jpg" alt="">
+                </div>
+                <div class="fb-page">Facebookページへ > </div>
+            </div>
+            <div class="fb-items">
+                <div class="fb-title">
+                    <div class="fb-logo">
+                        <img src="./images/1503.png" alt="">
+                    </div>
+                    <h6 style="margin-left: 5px">Mizuno Table Tennis Jp ミズノ卓球
+
+                    </h6>
+                </div>
+                <h6>今夜20:00 #YouTubeラジオ #ぴんぽんとーく!<br>【現役引退後の現実】<br><br>アスリートは引退後どんな風に過ごすの？<br>思い描いていた生活とのギャップは？<br>そんな疑問に元日本代表のあい＆れいこが自身の体験を交えて答えます！<br><br><a href="https://youtu.be/LFlysRJSDT8">https://youtu.be/LFlysRJSDT8</a><br><br>#服被った記念の写真 #ミズノ卓球 #卓球ラジオ #卓球
+                    </h6>
+                <div class="img-wrap">
+                    <img src="./images/18648.jpg" alt="">
+                </div>
+                <div class="fb-page">Facebookページへ > </div>
+            </div>
+        </div>
+
+    </section> 
+    <section class="other-links">
+        <div class="links row">
+            <div class="item">
+                <img src="./images/reachbeyond.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="./images/hakkenntai.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="./images/kodawari.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="./images/zone.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="./images/heritage.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="./images/kimichalle8_kekka.jpg" alt="">
+            </div>
+        </div>
+        <div class="social-link">
+            <div class="social-link-wrap row">
+                <img src="./images/icon_fb_pc_w.png" alt="">
+                <img src="./images/icon_tw_pc_new.png" alt="">
+                <img src="./images/icon_yt_pc_new.png" alt="">
+                <img src="./images/icon_ig_pc_w.png" alt="">
+            </div>
+        </div>
+    </section>  
+    <footer>
+        <div class="to-page-top">
+            <img src="./images/pagetop_sp.png" alt="">
+        </div>
+        <div class="footer-links row">
+            <ul class="row">
+                <li>ミズノ総合TOP</li>
+                <li>スポーツサービス</li>
+                <li>オンラインショップ</li>
+                <li>取扱店検索</li>
+                <li>CLUB MIZUNO</li>
+                <li>ええもん</li>
+                <li>公益財団法人 ミズノスポーツ振興財団</li>
+            </ul>
+            <div class="input">
+                <input type="text" name="" id="" >
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        
+        <div class="resource container">
+            <ul>
+                <li>企業情報</li>
+                <li>ミズノお客様相談センター</li>
+                <li>ご利用条件</li>
+                <li>プライバシーポリシー</li>
+                <li>ソーシャルメディア</li>
+            </ul>
+            <div class="copyrights">© Mizuno Corporation</div>
+        </div>
+    </footer>
+    
+</body>
+</html>
